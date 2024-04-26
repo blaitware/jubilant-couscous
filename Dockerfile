@@ -25,6 +25,10 @@ ENV LOG_CHANNEL stderr
 # Copy the source code into the container
 COPY . .
 
+RUN cd storage/ \
+    mkdir -p framework/{sessions,views,cache} \
+    chmod -R 775 framework
+
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
