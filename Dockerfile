@@ -25,7 +25,7 @@ ENV LOG_CHANNEL stderr
 # Copy the source code into the container
 COPY . .
 
-RUN cd storage/ \
+RUN mkdir storage && cd storage/ \
     mkdir -p framework/{sessions,views,cache} \
     chmod -R 775 framework
 
